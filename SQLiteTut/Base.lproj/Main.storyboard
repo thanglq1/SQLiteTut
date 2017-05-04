@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SQLiteTut" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyT-nA-PFi">
+                                <rect key="frame" x="16" y="36" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="MOq-Xu-bxj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-ma-Vse">
+                                <rect key="frame" x="16" y="82" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TZ9-qr-Jl4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47u-Ds-9On">
+                                <rect key="frame" x="16" y="128" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eZt-uQ-H60"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="W9A-K7-lLo">
+                                <rect key="frame" x="16" y="174" width="288" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-K3-Rtn">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NtI-zs-Ztf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gA-lh-7gA">
+                                        <rect key="frame" x="96" y="0.0" width="96" height="30"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="updateContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2jE-Aw-7Ip"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-Ef-JvY">
+                                        <rect key="frame" x="192" y="0.0" width="96" height="30"/>
+                                        <state key="normal" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteContact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3g-bt-HWt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6ET-Af-q1R"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cq4-bI-4I2">
+                                <rect key="frame" x="16" y="204" width="288" height="348"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" textLabel="Nf6-gh-nmC" detailTextLabel="HLa-Wc-XDB" style="IBUITableViewCellStyleSubtitle" id="Hcf-gQ-on1" customClass="ContactCell" customModule="SQLiteTut" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hcf-gQ-on1" id="jNX-E5-sFu">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nf6-gh-nmC">
+                                                    <rect key="frame" x="15" y="15" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HLa-Wc-XDB">
+                                                    <rect key="frame" x="15" y="35.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="dcv-bV-n8L"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5dF-lI-kK2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FyT-nA-PFi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="0tc-4H-g49"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cq4-bI-4I2" secondAttribute="bottom" constant="16" id="9DX-Y5-hzH"/>
+                            <constraint firstItem="cq4-bI-4I2" firstAttribute="top" secondItem="W9A-K7-lLo" secondAttribute="bottom" id="9ad-Kf-um4"/>
+                            <constraint firstAttribute="trailing" secondItem="cq4-bI-4I2" secondAttribute="trailing" constant="16" id="EhO-da-biS"/>
+                            <constraint firstAttribute="trailing" secondItem="47u-Ds-9On" secondAttribute="trailing" constant="16" id="LJL-T5-EEV"/>
+                            <constraint firstItem="47u-Ds-9On" firstAttribute="top" secondItem="Vbz-ma-Vse" secondAttribute="bottom" constant="16" id="LWe-uM-UD7"/>
+                            <constraint firstItem="cq4-bI-4I2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="LXC-FX-wdi"/>
+                            <constraint firstAttribute="trailing" secondItem="FyT-nA-PFi" secondAttribute="trailing" constant="16" id="MtQ-QK-IBm"/>
+                            <constraint firstAttribute="trailing" secondItem="Vbz-ma-Vse" secondAttribute="trailing" constant="16" id="Zs2-eT-oAv"/>
+                            <constraint firstAttribute="trailing" secondItem="W9A-K7-lLo" secondAttribute="trailing" constant="16" id="a7c-4Z-7e5"/>
+                            <constraint firstItem="47u-Ds-9On" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="aKh-FN-3id"/>
+                            <constraint firstItem="Vbz-ma-Vse" firstAttribute="top" secondItem="FyT-nA-PFi" secondAttribute="bottom" constant="16" id="goT-vF-nFS"/>
+                            <constraint firstItem="W9A-K7-lLo" firstAttribute="top" secondItem="47u-Ds-9On" secondAttribute="bottom" constant="16" id="meO-kS-FgW"/>
+                            <constraint firstItem="W9A-K7-lLo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="vQ5-Ru-JVK"/>
+                            <constraint firstItem="Vbz-ma-Vse" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="w33-q2-LsR"/>
+                            <constraint firstItem="FyT-nA-PFi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="yaf-qp-fsj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="47u-Ds-9On" id="29f-OI-Ljr"/>
+                        <outlet property="nameTextFiled" destination="FyT-nA-PFi" id="IC1-KS-MsW"/>
+                        <outlet property="phoneTextField" destination="Vbz-ma-Vse" id="67T-An-A38"/>
+                        <outlet property="tableview" destination="cq4-bI-4I2" id="GAS-Pu-g5O"/>
+                        <outlet property="updateContact" destination="3gA-lh-7gA" id="BgX-xY-JNb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
